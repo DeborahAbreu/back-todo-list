@@ -12,6 +12,12 @@ public class TodoRepository {
     private final ArrayList<Todo> todos = new ArrayList<>();
     private static long nextId = 1;
 
+    public TodoRepository() {
+        save(new Todo(null, "Estudar Spring Boot", false));
+        save(new Todo(null, "Fazer compras de supermercado", false));
+        save(new Todo(null, "Limpar o quarto", true));
+    }
+
     public List<Todo> findAll() {
         return todos;
     }

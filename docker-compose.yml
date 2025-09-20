@@ -9,7 +9,7 @@ services:
     container_name: todo-list-app
     # Mapeia a porta 8080 do seu computador para a porta 8080 do contêiner
     ports:
-      - "8080:8080"
+      - "25000:8080"
     # Injeta as configurações do application.properties como variáveis de ambiente
     # O Spring Boot as reconhece e substitui os valores do arquivo.
 

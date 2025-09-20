@@ -30,7 +30,7 @@ WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
 
 # Expõe a porta que a aplicação usa (definida no application.properties)
-EXPOSE 8080
+EXPOSE 25000
 
 # Comando para iniciar a aplicação quando o contêiner for executado
 ENTRYPOINT ["java", "-jar", "app.jar"]
