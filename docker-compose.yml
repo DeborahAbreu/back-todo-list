@@ -1,22 +1,15 @@
 version: '3.9'
 
 services:
-  # Nome do serviço da sua aplicação
   todo-list-app:
-    # Constrói a imagem a partir do Dockerfile no diretório atual (.)
     build: .
-    # Define um nome amigável para o contêiner
     container_name: todo-list-app
-    # Mapeia a porta 8080 do seu computador para a porta 8080 do contêiner
+    restart: unless-stopped
     ports:
       - "25000:8080"
-    # Injeta as configurações do application.properties como variáveis de ambiente
-    # O Spring Boot as reconhece e substitui os valores do arquivo.
-
+      
     environment:
       - SERVER_PORT=8080
-    # Garante que o contêiner consiga resolver o endereço do banco de dados
     dns:
       - 8.8.8.8
       - 1.1.1.1
-    # Reinicia o contêiner automaticamente em caso de falha
